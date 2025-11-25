@@ -1,0 +1,205 @@
+﻿*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Sarabun', sans-serif;
+  background: #eef1f7;
+  color: #222;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 16px;
+  text-align: center;
+  background: linear-gradient(135deg, #1f6feb, #43b3ff);
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.header p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.main {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.card-btn {
+  display: block;
+  padding: 18px 16px;
+  border-radius: 16px;
+  background: #ffffff;
+  text-decoration: none;
+  color: #123;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s;
+}
+
+.card-btn h2 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+.card-btn p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  background: #f6f9ff;
+}
+
+.card-btn.secondary {
+  border-left: 4px solid #ff9f1c;
+}
+
+.footer {
+  padding: 8px 12px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ===== แบบฟอร์ม ===== */
+
+.form-page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.form-header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.form-header p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #1f6feb;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.back-link span {
+  font-size: 1.2rem;
+}
+
+form {
+  background: #fff;
+  padding: 16px 14px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ccd3e0;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1f6feb;
+  box-shadow: 0 0 0 1px rgba(31, 111, 235, 0.15);
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+input[type="file"] {
+  padding: 6px 4px;
+  background: #f7f9fd;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #1f6feb, #43b3ff);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* สถานะข้อความ */
+.status {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.status.success {
+  color: #15803d;
+}
+
+.status.error {
+  color: #b91c1c;
+}

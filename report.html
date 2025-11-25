@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>รับแจ้งเหตุ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1>รับแจ้งเหตุคดี</h1>
+      <p>กรอกข้อมูลคดีเพื่อให้พิสูจน์หลักฐานรับทราบ</p>
+    </header>
+
+    <main class="main">
+      <div class="form-page">
+        <a href="index.html" class="back-link"><span>←</span> กลับหน้าแรก</a>
+
+        <div class="form-header">
+          <h2>แบบฟอร์มรับแจ้งเหตุ</h2>
+          <p>ข้อมูลจะถูกส่งเข้า Google Sheet และ LINE OA</p>
+        </div>
+
+        <form id="reportForm" enctype="multipart/form-data">
+          <!-- บอกประเภทฟอร์ม -->
+          <input type="hidden" name="formType" value="report" />
+
+          <div class="form-group">
+            <label>ยศ ชื่อ - นามสกุล *</label>
+            <input name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label>สถานีตำรวจ *</label>
+            <select name="station" id="stationReport" required>
+              <option value="">-- เลือกสถานีตำรวจ --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>เบอร์โทรติดต่อ *</label>
+            <input name="phone" type="tel" required />
+          </div>
+
+          <div class="form-group">
+            <label>ประเภทคดี *</label>
+            <select name="caseType" required>
+              <option value="คดีเกี่ยวกับจราจร">คดีเกี่ยวกับจราจร</option>
+              <option value="คดีเกี่ยวกับทรัพย์">คดีเกี่ยวกับทรัพย์</option>
+              <option value="คดีเกี่ยวกับเพลิงไหม้">คดีเกี่ยวกับเพลิงไหม้</option>
+              <option value="คดีเกี่ยวกับชีวิต">คดีเกี่ยวกับชีวิต</option>
+              <option value="คดีอื่นๆ">คดีอื่นๆ</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>วันเวลาที่แจ้ง *</label>
+            <input type="datetime-local" name="datetime" required />
+          </div>
+
+          <div class="form-group">
+            <label>แนบภาพหรือเอกสาร (ถ้ามี)</label>
+            <input type="file" name="file" />
+          </div>
+
+          <button type="submit" class="btn">ส่งข้อมูล</button>
+
+          <div id="reportStatus" class="status"></div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

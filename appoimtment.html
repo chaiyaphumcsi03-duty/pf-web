@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>นัดหมายงานพิสูจน์หลักฐาน</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1>นัดหมายงานพิสูจน์หลักฐาน</h1>
+      <p>กรอกข้อมูลให้ครบถ้วนเพื่อขอคิวนัดหมาย</p>
+    </header>
+
+    <main class="main">
+      <div class="form-page">
+        <a href="index.html" class="back-link"><span>←</span> กลับหน้าแรก</a>
+
+        <div class="form-header">
+          <h2>แบบฟอร์มนัดหมาย</h2>
+          <p>สำหรับงานตรวจสถานที่เกิดเหตุ และงานตรวจพิสูจน์ยาเสพติด</p>
+        </div>
+
+        <form id="appointmentForm" enctype="multipart/form-data">
+          <!-- ใช้บอกประเภทฟอร์มให้ Apps Script รู้ -->
+          <input type="hidden" name="formType" value="appointment" />
+
+          <div class="form-group">
+            <label>ยศ ชื่อ - นามสกุล *</label>
+            <input name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label>สถานีตำรวจ *</label>
+            <select name="station" id="stationAppointment" required>
+              <option value="">-- เลือกสถานีตำรวจ --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>เบอร์โทรติดต่อ *</label>
+            <input name="phone" type="tel" required />
+          </div>
+
+          <div class="form-group">
+            <label>Email ผู้ใช้งาน *</label>
+            <input name="email" type="email" required />
+          </div>
+
+          <div class="form-group">
+            <label>ประเภทงาน *</label>
+            <select name="jobType" required>
+              <option value="งานตรวจสถานที่เกิดเหตุ">งานตรวจสถานที่เกิดเหตุ</option>
+              <option value="งานตรวจพิสูจน์ยาเสพติด">งานตรวจพิสูจน์ยาเสพติด</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>รายละเอียดเพิ่มเติม</label>
+            <textarea name="detail" placeholder="ระบุข้อมูลหรือความต้องการเพิ่มเติม"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>วันที่ต้องการนัดหมาย *</label>
+            <input type="date" name="date" required />
+          </div>
+
+          <div class="form-group">
+            <label>เวลาที่ต้องการนัดหมาย *</label>
+            <input type="time" name="time" required />
+          </div>
+
+          <div class="form-group">
+            <label>แนบภาพหรือเอกสาร (ถ้ามี)</label>
+            <input type="file" name="file" />
+          </div>
+
+          <button type="submit" class="btn">บันทึกข้อมูล</button>
+
+          <div id="appointmentStatus" class="status"></div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
